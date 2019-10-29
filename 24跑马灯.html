@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+
+</head>
+<body>
+<div id="app">
+    <input type="button" value="开始" v-on:click="lang"/>
+    <input type="button" value="停止" v-on:click="pause" />
+    <hr>
+    <span>{{message}}</span>
+</div>
+</body>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            message: "键盘敲烂，月薪过万。"
+        },
+        methods: {
+            lang: function () {
+                 t1 = setInterval(() => {
+                    var star = this.message.substring(0, 1);
+                    var end = this.message.substring(1);
+                    this.message = end + star;
+                }, 400);
+            },
+            pause: function () {
+                clearInterval(t1);
+                this.message = "键盘敲烂，月薪过万。";
+            }
+
+        }
+    });
+</script>
+</html>

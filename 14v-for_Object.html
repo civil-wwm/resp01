@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td {
+            width: 100px;
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<script src="node_modules/vue/dist/vue.js"></script>
+<body>
+<div id="app">
+
+    <table>
+        <tr v-for="(v,k) in person">
+            <td v-text="k"></td>
+            <td v-text="v"></td>
+        </tr>
+    </table>
+
+    <ul>
+        <li v-for="(item,index) in items":key="index">{{item}}</li>
+    </ul>
+
+</div>
+</body>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            person: {name: '柳岩', gender: '女', age: 21},
+            items: ['王昭君', '貂蝉', '西施', '杨玉环']
+        }
+    });
+</script>
+
+</html>

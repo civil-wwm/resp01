@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="node_modules/vue/dist/vue.js"></script>
+<body>
+<div id="app">
+
+    <button v-on:click="num++">点我</button>
+    {{num}}
+</div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            num: 0
+        }
+    });
+</script>
+
+</html>

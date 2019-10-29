@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="node_modules/vue/dist/vue.js"></script>
+<style>
+    table {
+        width: 400px;
+    }
+</style>
+<body>
+<div id="app">
+    <button @click="show=!show">点我呀，给你的color see see</button>
+    <!--遍历数组-->
+    <!--使用v-if显示/隐藏table-->
+    <table v-if="show">
+        <tr v-for="(user,index) in users" :key="index" v-if="index % 2==0" style="background-color:mediumvioletred">
+            <td v-text="index+1"></td>
+            <td v-for="(v,k) in user" v-text="v"></td>
+        </tr>
+        <tr v-else style="background-color:deepskyblue">
+            <td v-text="index+1"></td>
+            <td v-for="(v,k) in user" v-text="v"></td>
+        </tr>
+    </table>
+    <hr>
+    <!--使用v-show显示/隐藏table-->
+    <table v-show="show">
+        <tr v-for="(user,index) in users" :key="index" v-if="index % 2==0" style="background-color:mediumvioletred">
+            <td v-text="index+1"></td>
+            <td v-for="(v,k) in user" v-text="v"></td>
+        </tr>
+        <tr v-else style="background-color:deepskyblue">
+            <td v-text="index+1"></td>
+            <td v-for="(v,k) in user" v-text="v"></td>
+        </tr>
+    </table>
+    <input v-model="type">
+    <hr>
+    <div v-if="type==='A'">A</div>
+    <div v-else-if="type==='B'">B</div>
+    <div v-else-if="type==='C'">C</div>
+    <div v-else>Not A/B/C</div>
+
+</div>
+</body>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            users: [
+                {name: '柳岩', gender: '女', age: 21},
+                {name: '有哥', gender: '男', age: 30},
+                {name: '范冰冰', gender: '女', age: 24},
+                {name: '刘亦菲', gender: '女', age: 18},
+                {name: '古力娜扎', gender: '女', age: 25}
+            ],
+            show: true,
+            type: ''
+        }
+    });
+</script>
+
+</html>

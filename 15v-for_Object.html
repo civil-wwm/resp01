@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td {
+            width: 100px;
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<script src="node_modules/vue/dist/vue.js"></script>
+<body>
+<div id="app">
+    <button @click="show=!show">点我有惊喜</button>
+    <table v-if="show">
+        <tr v-for="(user,index) in users":key="index">
+            <td v-text="index+1"></td>
+            <td v-for="(v,k) in user" v-text="v"></td>
+        </tr>
+    </table>
+
+</div>
+</body>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            users: [
+                {name: '柳岩', gender: '女', age: 21},
+                {name: '有哥', gender: '男', age: 30},
+                {name: '范冰冰', gender: '女', age: 24},
+                {name: '刘亦菲', gender: '女', age: 18},
+                {name: '古力娜扎', gender: '女', age: 25}
+            ],
+            show: true
+        }
+    });
+</script>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="node_modules/vue/dist/vue.js"></script>
+<body>
+<div id="app">
+    <!-- 监听回车事件 -->
+    <input v-on:keyup.enter="submit('v-on')">
+    <br>
+    <!-- 缩写语法 -->
+    <input v-on:keydown.enter="submit('@')">
+
+</div>
+</body>
+<script>
+    var app = new Vue({
+        el:"#app",
+        data:{
+            num:0,
+        },
+        methods:{
+            submit(val) {
+               alert(val);
+            }
+        }
+    });
+</script>
+
+</html>

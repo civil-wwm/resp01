@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="node_modules/vue/dist/vue.js"></script>
+<body>
+<div id="app">
+
+    v-text:<span v-text="hello"></span>
+    <br>
+    v-html:<span v-html="hello"></span>
+</div>
+</body>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            hello: ''
+        },
+        created() {
+            this.hello = "<h1>大家好，我是渣渣辉，是兄弟就来砍我!</h1>>";
+            console.log(this);
+        }
+
+    })
+</script>
+
+</html>

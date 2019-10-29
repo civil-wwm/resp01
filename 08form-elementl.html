@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="node_modules/vue/dist/vue.js"></script>
+<body>
+<div id="app">
+
+    姓名：<input type="text" v-model="username"  name="username" placeholder="请输入姓名"> <br>
+    <h1>{{username}}</h1>
+
+    年龄：<input type="text" v-model="age" name="age" placeholder="年龄"> <br>
+    <h1>{{age}}</h1>
+
+    性别：
+     <input type="radio" v-model="sex"  name="sex" value="男">男
+     <input type="radio"  v-model="sex" name="sex" value="女">女
+    <h1>{{sex}}</h1>
+
+    爱好：
+    <select name="hobby" id="hobby" v-model="hobby"><br>
+        <option value="篮球" name="hobby">篮球</option>
+        <option value="排球" name="hobby">排球</option>
+        <option value="足球" name="hobby">足球</option>
+    </select>
+    <h1>{{hobby}}</h1>
+
+    语言：
+    <input  type="checkbox" v-model="language" value="Java">Java
+    <input  type="checkbox" v-model="language" value="Python">Python
+    <input  type="checkbox" v-model="language" value="GO">GO
+    <h1>你选择了：{{language}}</h1>
+    <hr>
+
+    简介：<textarea name="desc" v-model="desc" placeholder="请输入个人简介"></textarea>
+    <br>
+    <h1>{{desc}}</h1>
+
+</div>
+</body>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            username: 'xxx',
+            age: 18,
+            sex:'male',
+            hobby:'',
+            desc:"",
+            language:[]
+        }
+    })
+</script>
+
+</html>
